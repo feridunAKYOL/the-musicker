@@ -12,6 +12,7 @@ const config = require('./config');
 const api = require('./api');
 
 const app = express();
+app.use(express.urlencoded({ extended: false }));
 
 app.use(cors());
 app.use(bodyParser.json());
