@@ -16,7 +16,7 @@ const controllers = {
   },
   getOne: (req, res) => {
     
-    const id = req.params.id;
+    const id = req.body.id;
 
     const sql = `SELECT * FROM playlists where PlaylistId = '${id}'`;
 
@@ -43,14 +43,14 @@ VALUES( "${Name}" )`;
         res.status(400).json({ "error": err.message });
         return;
       }
-      res.send(rows)
+      res.send(`it's created`)
     });
     
   },
   update: (req, res) => {
     // read row data from body
     const Name = req.body.name;
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.body.id);
     
         
     const sql = `UPDATE playlists
@@ -69,7 +69,7 @@ VALUES( "${Name}" )`;
     });
   },
   delete: (req, res) => {
-    const id = req.params.id;
+    const id = req.body.id;
 
     const sql = `DELETE FROM playlists WHERE PlaylistId = "${id}"`;
 
@@ -78,8 +78,8 @@ VALUES( "${Name}" )`;
         res.status(400).json({ "error": err.message });
         return;
       }
-
       res.json(`it's deleted`)
+      //res.redirect('/')
     });
    }
 }

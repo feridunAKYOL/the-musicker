@@ -16,7 +16,7 @@ const controllers = {
   },
   getOne: (req, res) => {
     
-    const id = req.params.id;
+    const id = req.body.id;
 
     const sql = `SELECT * FROM artists where ArtistId = '${id}'`;
 
@@ -50,7 +50,7 @@ VALUES( "${Name}" )`;
   update: (req, res) => {
     // read row data from body
     const Name = req.body.name;
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.body.id);
     
         
     const sql = `UPDATE Artists
@@ -69,7 +69,7 @@ VALUES( "${Name}" )`;
     });
   },
   delete: (req, res) => {
-    const id = req.params.id;
+    const id = req.body.id;
 
     const sql = `DELETE FROM Artists WHERE ArtistId = "${id}"`;
 
