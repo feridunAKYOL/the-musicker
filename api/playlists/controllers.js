@@ -43,7 +43,8 @@ VALUES( "${Name}" )`;
         res.status(400).json({ "error": err.message });
         return;
       }
-      res.send(`it's created`)
+      //res.send(`it's created`)
+      res.redirect("/playlists.html")
     });
     
   },
@@ -65,7 +66,8 @@ VALUES( "${Name}" )`;
         res.status(400).json({ "error": err.message });
         return;
       }
-      res.send(`your changes have been saved`)
+      //res.send(`your changes have been saved`)
+      res.redirect("/playlists.html")
     });
   },
   delete: (req, res) => {
@@ -78,8 +80,8 @@ VALUES( "${Name}" )`;
         res.status(400).json({ "error": err.message });
         return;
       }
-      res.json(`it's deleted`)
-      //res.redirect('/')
+      //res.json(`it's deleted`)
+      res.redirect("/playlists.html")
     });
    }
 }

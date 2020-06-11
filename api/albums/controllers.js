@@ -43,7 +43,8 @@ VALUES("${title}" , "${ArtistId}" )`;
         res.status(400).json({ "error": err.message });
         return;
       }
-      res.send(rows)
+      //res.send(rows)
+      res.redirect('/')
     });
     
   },
@@ -66,7 +67,8 @@ WHERE
         res.status(400).json({ "error": err.message });
         return;
       }
-      res.send(`your changes have been saved`)
+      //res.send(`your changes have been saved`)
+      res.redirect('/')
     });
   },
   delete: (req, res) => {
@@ -82,7 +84,8 @@ WHERE
         return;
       }
 
-      res.json(`it's deleted`)
+     // res.json(`it's deleted`)
+      res.redirect('/')
     });
    }
 }
