@@ -10,13 +10,12 @@ const controllers = {
         res.status(400).json({ "error": err.message });
         return;
       }
-
       res.json(rows)
     });
   },
   getOne: (req, res) => {
     
-    const id = req.params.id;
+    const id = req.body.id;
 
     const sql = `SELECT * FROM albums where AlbumId = '${id}'`;
 
@@ -52,7 +51,7 @@ VALUES("${title}" , "${ArtistId}" )`;
     // read row data from body
      const title = req.body.title;
     const ArtistId = req.body.ArtistId;
-    const id = parseInt(req.params.id);
+    const id = parseInt(req.body.id);
     
         
     const sql = `UPDATE Albums
@@ -71,7 +70,7 @@ WHERE
     });
   },
   delete: (req, res) => {
-    const id = req.params.id;
+    const id = req.body.id;
     console.log(id);
     
 

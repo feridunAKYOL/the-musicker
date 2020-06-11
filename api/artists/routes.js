@@ -5,12 +5,12 @@ const router = express.Router();
 
 router.get('/', controllers.getAll);
 
-router.get('/:id', controllers.getOne);
+router.post('/view', controllers.getOne);
 
 router.post('/', controllers.create);
 
-router.put('/:id', controllers.update);
+router.post('/change', controllers.update);
 
-router.delete('/:id', controllers.delete);
+router.post('/delete', controllers.delete);
 
 module.exports = router;
