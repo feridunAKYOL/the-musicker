@@ -43,7 +43,8 @@ VALUES( "${Name}" )`;
         res.status(400).json({ "error": err.message });
         return;
       }
-      res.send(rows)
+      //res.send(rows)
+      res.redirect("/artists.html")
     });
     
   },
@@ -65,7 +66,8 @@ VALUES( "${Name}" )`;
         res.status(400).json({ "error": err.message });
         return;
       }
-      res.send(`your changes have been saved`)
+      //res.send(`your changes have been saved`)
+      res.redirect("/artists.html")
     });
   },
   delete: (req, res) => {
@@ -79,8 +81,11 @@ VALUES( "${Name}" )`;
         return;
       }
 
-      res.json(`it's deleted`)
+      //res.json(`it's deleted`)
+      res.redirect("/artists.html")
+      
     });
+
    }
 }
 
